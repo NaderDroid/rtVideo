@@ -14,11 +14,11 @@ joinButton.addEventListener("click" , ()=>{
         navigator.getUserMedia({audio : true , video : {width:400 , height:300}}
             ,(stream)=>{
             console.log('Media access success');
-            let video = localVideo;
-            video.srcObject = stream;
-            video.onloadedmetadata = function (e){
-                video.play().then(r => console.log("video is playing"));
+            localVideo.srcObject = stream;
+            localVideo.onloadedmetadata = function (e){
+                localVideo.play().then(r => console.log("video is playing"));
             }
+            mainPage.style = "display : none";
             }
             , ()=>{
             console.log('Media access failed');
