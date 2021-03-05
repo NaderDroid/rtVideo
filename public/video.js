@@ -7,5 +7,24 @@ var roomName = document.getElementById("roomName")
 
 
 joinButton.addEventListener("click" , ()=>{
-    console.log("joining the room")
+    console.log("trying to join the room")
+
+    if (roomName.value !== "") {
+        console.log("Joining the room");
+        navigator.getUserMedia({audio : true , video : {width:400 , height:300}}
+            ,(stream)=>{
+            console.log('Media access success');
+            let video = localVideo;
+            video.srcObject = stream;
+            video.onloadedmetadata = function (e){
+                video.play().then(r => console.log("video is playing"));
+            }
+            }
+            , ()=>{
+            console.log('Media access failed');
+            })
+    } else {
+        console.log("Can't join, please provide a name first");
+        alert("Please provide a name first");
+    }
 })
