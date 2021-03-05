@@ -1,0 +1,12 @@
+
+### IntelliJ IDEA ###
+.idea
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+node_modules
