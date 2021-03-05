@@ -1,17 +1,19 @@
-var mainPage = document.getElementById("main-page")
-var joinButton = document.getElementById("join-btn")
-var meetingRoom = document.getElementById("video-room")
-var localVideo = document.getElementById("local-video")
-var peerVideo = document.getElementById("peer-video")
-var roomName = document.getElementById("roomName")
+const socket = io.connect("http://localhost:4000");
+const mainPage = document.getElementById("main-page")
+const joinButton = document.getElementById("join-btn")
+const meetingRoom = document.getElementById("video-room")
+const localVideo = document.getElementById("local-video")
+const peerVideo = document.getElementById("peer-video")
+const roomName = document.getElementById("roomName")
 
 
 joinButton.addEventListener("click" , ()=>{
     console.log("trying to join the room")
 
     if (roomName.value !== "") {
+        socket.emit("joining" , roomName.value);
         console.log("Joining the room");
-        navigator.getUserMedia({audio : true , video : {width:400 , height:300}}
+        navigator.getUserMedia({audio : false , video : {width:400 , height:300}}
             ,(stream)=>{
             console.log('Media access success');
             localVideo.srcObject = stream;
