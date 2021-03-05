@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vido chat app</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+        <link href="/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <div id="main-page">
+            <h2 class="text">Vido Chat app</h2>
+            <input id="roomName" type="text" placeholder="Room name" />
+            <input id="message" type="text" placeholder="Message" />
+            <button id="join-btn">JOIN</button>
+        </div>
+
+    <div id="video-room">
+        <video id="local-video"></video>
+        <video id="peer-video"></video>
+    </div>
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/3.1.1/socket.io.min.js"
+            integrity="sha384-gDaozqUvc4HTgo8iZjwth73C6dDDeOJsAgpxBcMpZYztUfjHXpzrpdrHRdVp8ySO"
+            crossorigin="anonymous"></script>
+    <script src="video.js"></script>
+</html>
