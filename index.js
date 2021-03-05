@@ -43,7 +43,7 @@ sockServer.on("connection" , (socket)=>{
     })
     socket.on("offer" , (roomName , offer) =>{
         socket.broadcast.to(roomName).emit("offer" , offer)
-        console.log("offer");
+        console.log(offer + "hiiiii offeerrrr");
     })
     socket.on("answer" , (roomName , answer) =>{
         socket.broadcast.to(roomName).emit("answer" , answer)
